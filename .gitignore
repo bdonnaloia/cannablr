@@ -1,0 +1,7 @@
+*.pyc
+.DS_Store
+landingpage
+dev.db
+cannablr/delete
+cannablr/media
+cannablr/static
