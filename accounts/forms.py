@@ -3,22 +3,6 @@ from accounts.models import UserReview
 from accounts.models import Entry
 from django import forms
 
-# Create the form class.
-class UserReviewForm(ModelForm):
-     class Meta:
-         model = UserReview
-         fields = ['stars', 'comment']
-         widgets = {
-         'comment': Textarea,
-         'stars': RadioSelect(choices=[
-         	(1, 'Very poor'),
-         	(2, 'Poor'),
-         	(3, 'Satisfactory'),
-         	(4, 'Great'),
-         	(5, 'Excellent')
-         	])
-         }
-
 
 class SellForm(ModelForm):
 	class Meta:
@@ -37,9 +21,19 @@ class SellForm(ModelForm):
 		}
 
 
-	# headline = forms.CharField()
-	# body_text = forms.CharField()
-	# price1 = forms.CharField()
-	# price2 = forms.CharField()
-	# item_picture = forms.ImageField()widgets = {
+class UserReviewForm(ModelForm):
+     class Meta:
+         model = UserReview
+         fields = ['stars', 'comment']
+         widgets = {
+         'comment': Textarea,
+         'stars': RadioSelect(choices=[
+         	(1, 'Very poor'),
+         	(2, 'Poor'),
+         	(3, 'Satisfactory'),
+         	(4, 'Great'),
+         	(5, 'Excellent')
+         	])
+         }
+
    
